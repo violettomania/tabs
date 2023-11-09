@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 
 export interface ButtonProps {
-  children: React.ReactNode;
+  children: string;
   isActive: boolean;
   handleClick: () => void;
 }

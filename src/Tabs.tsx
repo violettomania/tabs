@@ -15,7 +15,7 @@ export default function Tabs({
     <div className='btn-container'>
       {companies.map((company, index) => (
         <Button
-          key={index}
+          key={company}
           handleClick={() => setCurrentCompany(company)}
           isActive={currentCompany === company}
         >
