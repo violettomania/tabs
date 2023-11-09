@@ -1,16 +1,19 @@
 export interface ButtonProps {
   children: React.ReactNode;
   isActive: boolean;
-  handleClick?: () => void;
+  handleClick: () => void;
 }
 
 export default function Button({
   children,
   isActive,
-  handleClick: onClick,
+  handleClick,
 }: ButtonProps) {
   return (
-    <button onClick={onClick} className={`job-btn ${isActive && 'active-btn'}`}>
+    <button
+      onClick={handleClick}
+      className={`job-btn ${isActive && 'active-btn'}`}
+    >
       {children}
     </button>
   );
