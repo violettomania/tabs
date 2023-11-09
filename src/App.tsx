@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Button from './Button';
-import Job from './Job';
+import { useState, useEffect } from 'react';
+import Jobs from './components/Jobs';
+import LoadingSpinner from './components/LoadingSpinner';
+import Tabs from './Tabs';
 
 const url = 'https://course-api.com/react-tabs-project';
 
@@ -25,22 +26,15 @@ export default function App() {
 
   return (
     <section className='jobs-center'>
-      <div className='btn-container'>
-        {companies.map((company, index) => (
-          <Button
-            key={index}
-            handleClick={() => setCurrentCompany(company)}
-            isActive={currentCompany === company}
-          >
-            {company}
-          </Button>
-        ))}
-      </div>
-      {jobs.map(
-        ({ id, company, ...rest }) =>
-          company === currentCompany && (
-            <Job key={id} company={company} {...rest} />
-          )
+      {loading ? (
+        <LoadingSpinner />
+      ) : error ? (
+        <h1>Error</h1>
+      ) : (
+        <>
+          <Tabs {...{ companies, currentCompany, setCurrentCompany }} />
+          <Jobs {...{ jobs, currentCompany }} />
+        </>
       )}
     </section>
   );
