@@ -1,4 +1,4 @@
-interface JobProps {
+interface DataProps {
   id: string;
   order: number;
   title: string;

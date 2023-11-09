@@ -1,7 +1,9 @@
 import Job from './Job';
 
+export type JobsOwnProps = Omit<DataProps, 'order'>;
+
 interface JobsProps {
-  jobs: JobProps[];
+  jobs: JobsOwnProps[];
   currentCompany: string;
 }
 
