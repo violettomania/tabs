@@ -1,25 +1,13 @@
 import { FaAngleDoubleRight } from 'react-icons/fa';
 
-interface OwnProps {
-  order: number;
-  title: string;
-  dates: string;
-  duties: string[];
-  company: string;
-}
+type OwnProps = Omit<JobProps, 'id' | 'order'>;
 
-export default function Job({
-  order,
-  title,
-  dates,
-  duties,
-  company,
-}: OwnProps) {
+export default function Job({ title, dates, duties, company }: OwnProps) {
   return (
     <article className='job-info'>
       <h3>{title}</h3>
       <span className='job-company'>{company}</span>
-      <p className='job-date'>December 2015 - Present</p>
+      <p className='job-date'>{dates}</p>
       <div>
         {duties.map((duty, index) => (
           <div key={index} className='job-desc'>

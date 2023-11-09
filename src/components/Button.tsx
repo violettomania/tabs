@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 export interface ButtonProps {
   children: React.ReactNode;
   isActive: boolean;
@@ -12,7 +14,8 @@ export default function Button({
   return (
     <button
       onClick={handleClick}
-      className={`job-btn ${isActive && 'active-btn'}`}
+      className={classNames('job-btn', { 'active-btn': isActive })}
+      aria-pressed={isActive}
     >
       {children}
     </button>
