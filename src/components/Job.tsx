@@ -1,8 +1,8 @@
 import { FaAngleDoubleRight } from 'react-icons/fa';
 
-type OwnProps = Omit<JobProps, 'id' | 'order'>;
+type OwnJobProps = Omit<JobProps, 'id' | 'order'>;
 
-export default function Job({ title, dates, duties, company }: OwnProps) {
+export default function Job({ title, dates, duties, company }: OwnJobProps) {
   return (
     <article className='job-info'>
       <h3>{title}</h3>
