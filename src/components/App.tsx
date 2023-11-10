@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Jobs from './components/Jobs';
-import LoadingSpinner from './components/LoadingSpinner';
+import Jobs from './Jobs';
+import LoadingSpinner from './LoadingSpinner';
 import Tabs from './Tabs';
 
 const url = 'https://course-api.com/react-tabs-project';
